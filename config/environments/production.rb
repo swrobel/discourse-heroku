@@ -9,7 +9,7 @@ Discourse::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -27,9 +27,15 @@ Discourse::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.sendmail_settings = {arguments: '-i'}
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :port =>           ENV['SMTP_PORT'],
+    :address =>        ENV['SMTP_SERVER'],
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+  }
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
