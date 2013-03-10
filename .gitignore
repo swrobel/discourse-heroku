@@ -56,7 +56,6 @@ sublime-project.sublime-workspace
 config/multisite.yml
 # don't check in my renamed multisite config as well :)
 config/multisite1.yml
-config/fog_credentials.yml
 
 /public/uploads
 /public/stylesheet-cache/*
