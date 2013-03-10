@@ -16,9 +16,9 @@ Install addons
 
 might as well use Postgres 9.2 although discourse will work with 9.1, which is Heroku's default at time of writing
 
-`heroku addons:add mandrill:starter rediscloud:20 redistogo:nano scheduler`
+`heroku addons:add mandrill:starter rediscloud:20 redistogo:nano memcachier:dev scheduler`
 
-mandrill is for email delivery, although the free mailgun or sendgrid plans will work as well (just update the appropriate config vars). rediscloud 20mb is for the cache db, redistogo nano (5mb) is for queueing. Since neither addon allows you to have more than one db, I just added both to keep the databases separate since the cache tends to get flushed a lot.
+mandrill is for email delivery, although the free mailgun or sendgrid plans will work as well (just update the appropriate config vars). rediscloud 20mb is for the cache db, redistogo nano (5mb) is for queueing. Since neither addon allows you to have more than one db, I just added both to keep the databases separate since the cache tends to get flushed a lot. memcachier dev (25mb) is for miniprofiler, which shows timing in the top left for admins.
 
 `heroku labs:enable user-env-compile`
 
