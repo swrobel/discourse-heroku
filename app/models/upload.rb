@@ -68,8 +68,7 @@ class Upload < ActiveRecord::Base
     blob = file.read
     sha1 = Digest::SHA1.hexdigest(blob)
 
-    Fog.credentials_path = "#{Rails.root}/config/fog_credentials.yml"
-    fog = Fog::Storage.new(provider: 'AWS')
+    fog = Fog::Storage.new(provider: 'AWS', aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'], aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
 
     remote_filename = "#{sha1[2..-1]}.#{image_info.type}"
     path = "/uploads/#{sha1[0]}/#{sha1[1]}"
