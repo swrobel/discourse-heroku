@@ -6,6 +6,10 @@ If you follow this guide, you should be able to run fully-functional Discourse o
 
 [view original README](README_ORIG.md)
 
+Clone this repo
+---------------
+`git clone git://github.com/swrobel/discourse-heroku.git discourse`
+
 Install addons
 --------------
 `heroku addons:add heroku-postgresql:dev --version=9.2`
@@ -28,6 +32,12 @@ Setup config vars
 1. copy your API key from [your Heroku account](https://dashboard.heroku.com/account)
 1. `heroku config:add HEROKU_API_KEY=<paste here>`
 1. `heroku config:add SMTP_SERVER=smtp.mandrillapp.com SMTP_PORT=587 HEROKU_APP=<heroku_app_name>`
+
+Push the code, migrate, seed
+----------------------------
+1. `git push heroku master`
+1. `heroku run rake db:migrate`
+1. `heroku run rake db:seed_fu`
 
 Setup scheduler tasks
 ---------------------
