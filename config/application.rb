@@ -92,9 +92,6 @@ module Discourse
     # Use redis for our cache
     config.cache_store = DiscourseRedis.new_redis_store
 
-    # Test with rack::cache disabled. Nginx does this for us
-    config.action_dispatch.rack_cache =  nil
-
     # So open id logs somewhere sane
     config.after_initialize do
       OpenID::Util.logger = Rails.logger
