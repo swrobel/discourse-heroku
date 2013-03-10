@@ -2,7 +2,7 @@ require 'autoscaler/sidekiq'
 require 'autoscaler/heroku_scaler'
 
 Sidekiq.configure_server do |config|
-sidekiq_redis = { url: $redis.url, namespace: 'sidekiq' }
+sidekiq_redis = { url: $redis.url, namespace: 'sidekiq', size: 3 }
 
 Sidekiq.configure_server do |config|
   config.redis = sidekiq_redis
