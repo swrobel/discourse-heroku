@@ -44,7 +44,7 @@ Setup scheduler tasks
 `heroku addons:open scheduler`
 
 Set up the scheduled tasks as follows:
-![scheduler config](http://d.pr/i/FKJj+)
+![scheduler config](http://d.pr/i/EL57+)
 
 Setup S3 storage for uploads (optional)
 ---------------------------------------
