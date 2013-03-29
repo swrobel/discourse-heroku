@@ -44,7 +44,17 @@ Setup scheduler tasks
 `heroku addons:open scheduler`
 
 Set up the scheduled tasks as follows:
-![scheduler config](http://d.pr/i/EL57+)
+
+        TASK                       | FREQUENCY
+        --------------------------------------------
+
+        rake enqueue_digest_emails |  Daily               
+
+        rake category_stats        | Daily              
+
+        rake periodical_updates    | Every 10 minutes
+                                   
+        rake version_check         | Daily          
 
 Setup S3 storage for uploads (optional)
 ---------------------------------------
