@@ -67,3 +67,10 @@ navigate to `http://<your-app>.herokuapp.com/admin/site_settings`
 
 1. Check the box for `enable_s3_uploads`
 2. Paste your bucket into `s3_upload_bucket`
+
+Keeping up to date (optional)
+-----------------------------
+I will try to roughly update this repo every 2 weeks, or when there's a new Discourse point release (although at this point versioning is pretty arbitrary). I'm rebasing rather than merging to maintain a clean tree, so you're going to have to force-pull and force-push to heroku.
+
+1. `git pull --force`
+1. `git push --force heroku master`
