@@ -1,6 +1,6 @@
 Setting up Discourse on Heroku
 ==============================
-*Last updated for version 0.8.4*
+*Last updated for version 0.8.3*
 
 If you follow this guide, you should be able to run fully-functional Discourse on Heroku for free (up to a point)
 
@@ -16,9 +16,9 @@ Install addons
 
 might as well use Postgres 9.2 although discourse will work with 9.1, which is Heroku's default at time of writing
 
-`heroku addons:add mandrill:starter rediscloud:20 scheduler`
+`heroku addons:add mandrill:starter rediscloud:20 memcachier:dev scheduler`
 
-mandrill is for email delivery, although the free mailgun or sendgrid plans will work as well (just update the appropriate config vars).
+mandrill is for email delivery, although the free mailgun or sendgrid plans will work as well (just update the appropriate config vars). memcachier is for rails cache storage.
 
 `heroku labs:enable user-env-compile`
 

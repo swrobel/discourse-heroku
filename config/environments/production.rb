@@ -26,6 +26,10 @@ Discourse::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
+  config.cache_store = :dalli_store, ENV["MEMCACHIER_SERVERS"].split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"]}
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :port =>           ENV['SMTP_PORT'],

@@ -88,10 +88,6 @@ module Discourse
     # Our templates shouldn't start with 'discourse/templates'
     config.handlebars.templates_root = 'discourse/templates'
 
-    require 'discourse_redis'
-    # Use redis for our cache
-    config.cache_store = DiscourseRedis.new_redis_store
-
     # So open id logs somewhere sane
     config.after_initialize do
       OpenID::Util.logger = Rails.logger
