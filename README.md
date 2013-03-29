@@ -32,6 +32,7 @@ Setup config vars
 1. copy your API key from [your Heroku account](https://dashboard.heroku.com/account)
 1. `heroku config:add HEROKU_API_KEY=<paste here>`
 1. `heroku config:add SMTP_SERVER=smtp.mandrillapp.com SMTP_PORT=587 HEROKU_APP=<heroku_app_name>`
+1. `heroku config:add RUBY_GC_MALLOC_LIMIT=90000000` (per [Discourse team's recommendation](http://meta.discourse.org/t/tuning-ruby-and-rails-for-discourse/4126))
 
 Push the code, migrate, seed
 ----------------------------
