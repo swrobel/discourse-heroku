@@ -1,6 +1,6 @@
 Setting up Discourse on Heroku
 ==============================
-*Last updated for version 0.8.3*
+*Last updated for version 0.8.4*
 
 If you follow this guide, you should be able to run fully-functional Discourse on Heroku for free (up to a point)
 
