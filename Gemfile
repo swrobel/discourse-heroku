@@ -59,6 +59,7 @@ gem 'thin'
 gem 'diffy'
 gem 'autoscaler'
 gem 'dalli'
+gem 'newrelic_rpm'
 
 # Gem that enables support for plugins. It is required.
 gem 'discourse_plugin', path: 'vendor/gems/discourse_plugin'

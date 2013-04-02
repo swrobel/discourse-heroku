@@ -286,6 +286,7 @@ GEM
     net-ssh-multi (1.1)
       net-ssh (>= 2.1.4)
       net-ssh-gateway (>= 0.99.0)
+    newrelic_rpm (3.6.0.78)
     nokogiri (1.5.6)
     oauth (0.4.7)
     oauth2 (0.8.0)
@@ -523,6 +524,7 @@ DEPENDENCIES
   mocha
   multi_json
   mustache
+  newrelic_rpm
   nokogiri
   oj
   omniauth
