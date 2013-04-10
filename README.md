@@ -59,7 +59,15 @@ Set up the scheduled tasks as follows:
 
         rake periodical_updates    | Every 10 minutes
                                    
-        rake version_check         | Daily          
+        rake version_check         | Daily
+        
+Setup your host name
+--------------------
+Confirmation emails sent from your application will refer to an EC2 instance for the host name by default, which won't work.
+
+To fix this, enter the admin section by visiting /admin. You may need to create an account and set its admin flag to be true.
+
+Next, click 'Site Settings', and enter `your-app-name.herokuapp.com` in the `force_hostname` field.
 
 Setup S3 storage for uploads (optional)
 ---------------------------------------
