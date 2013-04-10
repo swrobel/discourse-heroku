@@ -10,6 +10,10 @@ Clone this repo
 ---------------
 `git clone git://github.com/swrobel/discourse-heroku.git discourse`
 
+Tell Heroku about your app
+--------------------------
+`heroku apps:create [YOUR_APP_NAME]`
+
 Install addons
 --------------
 `heroku addons:add heroku-postgresql:dev --version=9.2`
