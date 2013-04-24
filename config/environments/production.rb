@@ -26,7 +26,7 @@ Discourse::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
-  config.cache_store = :dalli_store, ENV["MEMCACHIER_SERVERS"].split(","),
+  config.cache_store = :dalli_store, ENV["MEMCACHIER_SERVERS"].try(:split, ","),
                     {:username => ENV["MEMCACHIER_USERNAME"],
                      :password => ENV["MEMCACHIER_PASSWORD"]}
 
@@ -49,4 +49,5 @@ Discourse::Application.configure do
   config.ember.handlebars_location = "#{Rails.root}/app/assets/javascripts/external/handlebars-1.0.rc.3.js"
   config.handlebars.precompile = true
 
+  config.assets.initialize_on_precompile = false
 end
