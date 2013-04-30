@@ -28,6 +28,10 @@ mandrill is for email delivery, although the free mailgun or sendgrid plans will
 
 This will enable asset precompilation to complete successfully.
 
+The first time this is uploaded to heroku - asset precompilation will fail because there is no database setup.
+
+--INSERT INSTRUCTIONS FOR FORCING RELOAD ON HEROKU-- (to be done after rake db:migrate is run)
+
 Setup config vars
 -----------------
 1. `rake secret`
@@ -37,6 +41,8 @@ Setup config vars
 1. `heroku config:add HEROKU_API_KEY=<paste here>`
 1. `heroku config:add SMTP_SERVER=smtp.mandrillapp.com SMTP_PORT=587 HEROKU_APP=<heroku_app_name>`
 1. `heroku config:add RUBY_GC_MALLOC_LIMIT=90000000` (per [Discourse team's recommendation](http://meta.discourse.org/t/tuning-ruby-and-rails-for-discourse/4126))
+2. `heroku config:add MANDRILL_USERNAME=<your mandrill email>`
+2. `heroku config:add MANDRILL_APIKEY=<your mandrill api key>`
 
 Push the code, migrate, seed
 ----------------------------
@@ -60,6 +66,19 @@ Set up the scheduled tasks as follows:
         rake periodical_updates    | Every 10 minutes
                                    
         rake version_check         | Daily
+        
+Create an admin user
+--------------------
+You must create an original admin user. To do this, first create a user account using the web-gui. An activation email will be sent to your inbox. You may need to copy the activation link address and replace the domain portion of it with your apps domain name (HEROKU_APP_NAME.herokuapp.com)
+
+Next run `heroku run console`
+
+````
+user = User.first
+user.admin = true
+user.moderator = true (this is optional)
+user.save
+````
         
 Setup your host name
 --------------------
