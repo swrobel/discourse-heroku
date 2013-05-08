@@ -1,3 +1,8 @@
+Update May 7, 2013
+------------------
+I'm finding it much more difficult to maintain my discourse instance on heroku than I'd anticipated, and as a result, it hasn't been getting much attention. As I understand, [per sam from discourse](http://meta.discourse.org/t/password-length-error-when-registering-with-social-account/4670/48?u=swrobel), **discourse on heroku should be working straight out of discourse's main repo without a need for my (outdated) fork.** If anyone has tried, please let me know and I'll just start directing people back there, since this repo is getting a lot more traffic than I expected ;)
+
+
 Setting up Discourse on Heroku
 ==============================
 *Last updated for version 0.8.5*
