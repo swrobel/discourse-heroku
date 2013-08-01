@@ -1,4 +1,10 @@
-Update May 7, 2013 [![Project Status](http://stillmaintained.com/swrobel/discourse-heroku.png)](http://stillmaintained.com/swrobel/discourse-heroku)
+Status: [![Project Status](http://stillmaintained.com/swrobel/discourse-heroku.png)](http://stillmaintained.com/swrobel/discourse-heroku)
+
+Update August 1, 2013
+---------------------
+It looks like Heroku themselves have a [fork](https://github.com/rwdaigle/discourse) that they are maintaining with updated [instructions](https://github.com/rwdaigle/discourse/blob/master/docs/HEROKU.md) for running on Heroku. I haven't tried it yet, but there is a discussion about it on [Discourse Meta](https://discussion.heroku.com/t/running-discourse-on-heroku/27)
+
+Update May 7, 2013
 ------------------
 I'm finding it much more difficult to maintain my discourse instance on heroku than I'd anticipated, and as a result, it hasn't been getting much attention. As I understand, [per sam from discourse](http://meta.discourse.org/t/password-length-error-when-registering-with-social-account/4670/48?u=swrobel), **discourse on heroku should be working straight out of discourse's main repo without a need for my (outdated) fork.** If anyone has tried, please let me know and I'll just start directing people back there, since this repo is getting a lot more traffic than I expected ;)
 
